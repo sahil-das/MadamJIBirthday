@@ -7,7 +7,7 @@ const images = [
   { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/2.png' : '/images/2.png', quote: 'Even in a crowd, I only saw you.' },
   { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/3.png' : '/images/3.png', quote: 'Every glance of you felt like forever.' },
   { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/4.png' : '/images/4.png', quote: 'You are the poem I never finished writing.' },
-  { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/1.png' : '/images/1.png', quote: 'Still… you are everything I remember beautifully.' }
+  { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/1.png' : '/images/1.png', quote: 'Some memories don’t fade… they bloom in silence.' }
 ];
 
 export default function SurpriseSlideshow() {
