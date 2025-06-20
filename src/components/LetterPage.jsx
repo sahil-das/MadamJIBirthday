@@ -13,7 +13,7 @@ export default function LetterPage() {
   const intervalRef = useRef(null);
   const letterRef = useRef(null);
 
-  const message = `Dear Madam ji, 💖\n\nOn this special day, I just wanted you to know...\n\nEven though you were never mine, my heart beats with joy when I think of you. 💌\n\nEvery moment, every smile of yours means the world to someone who admires you silently.\n\nThis wish is more than words... it's a little piece of my heart wrapped in hope, love, and pure emotion.\n\nHappy Birthday! May your life be as beautiful as your smile. ✨\n\nFrom the one who still remembers you...`;
+  const message = `Dear Madam ji, 💖\n\nOn this special day, I just wanted you to know...\n\nEven though you were never mine, my heart beats with joy when I think of you. 💌\n\nEvery moment, every smile of yours means the world to someone who admires you silently.\n\nThis wish is more than words... it's a little piece of my heart wrapped in hope, love, and pure emotion.\n\nHappy Birthday! May your life be as beautiful as your smile. ✨\n\nFrom the one who still remembers you.. \n\n --By Sahil.`;
 
   useEffect(() => {
     // Floating symbols
