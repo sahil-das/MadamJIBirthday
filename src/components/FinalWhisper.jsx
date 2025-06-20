@@ -34,8 +34,8 @@ const FinalWhisper = () => {
       </div>
       <audio autoPlay loop>
         <source
-          src="https://www.chosic.com/wp-content/uploads/2021/12/Love-Inspiring-Piano.mp3"
-          type="audio/mpeg"
+          src={process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/music/stars.mp3' : '/music/stars.mp3'}
+          type="audio/mp3"
         />
       </audio>
     </div>

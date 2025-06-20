@@ -85,7 +85,9 @@ export default function SurpriseSlideshow() {
         </button>
       </div>
       <audio autoPlay loop>
-        <source src="https://www.chosic.com/wp-content/uploads/2021/12/Love-Inspiring-Piano.mp3" type="audio/mpeg" />
+        <source           
+          src={process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/music/stars.mp3' : '/music/stars.mp3'}
+          type="audio/mp3" />
       </audio>
     </div>
   );

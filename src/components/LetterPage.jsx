@@ -12,8 +12,9 @@ export default function LetterPage() {
   const indexRef = useRef(0);
   const intervalRef = useRef(null);
   const letterRef = useRef(null);
+  const audioRef = useRef(null);
 
-  const message = `Dear Madam ji, 💖\n\nOn this special day, I just wanted you to know...\n\nEven though you were never mine, my heart beats with joy when I think of you. 💌\n\nEvery moment, every smile of yours means the world to someone who admires you silently.\n\nThis wish is more than words... it's a little piece of my heart wrapped in hope, love, and pure emotion.\n\nHappy Birthday! May your life be as beautiful as your smile. ✨\n\nFrom the one who still remembers you.. \n\n --By Sahil.`;
+  const message = `Dear Madam ji, 💖\n\nOn this special day, I just wanted you to know...\n\nEven though you were never mine, my heart beats with joy when I think of you. 💌\n\nEvery moment, every smile of yours means the world to someone who admires you silently.\n\nThis wish is more than words... it's a little piece of my heart wrapped in hope, love, and pure emotion.\n\nHappy Birthday! May your life be as beautiful as your smile. ✨\n\nFrom the one who still remembers you...`;
 
   useEffect(() => {
     // Floating symbols
@@ -32,6 +33,9 @@ export default function LetterPage() {
   }, []);
 
   const openLetter = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
     setShowLetter(true);
     setHintFade(true);
     intervalRef.current = setInterval(() => {
@@ -87,10 +91,10 @@ export default function LetterPage() {
       <div className={`letter-hint${hintFade ? ' fade-out' : ''}`} id="letterHint">
         Click the letter to open something from the heart 💖
       </div>
-      <audio autoPlay loop>
+      <audio ref={audioRef} loop>
         <source
-          src="https://www.chosic.com/wp-content/uploads/2021/12/Love-Inspiring-Piano.mp3"
-          type="audio/mpeg"
+          src={process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/music/birthday.mp3' : '/music/birthday.mp3'}
+          type="audio/mp3"
         />
       </audio>
     </div>
