@@ -68,7 +68,7 @@ const BirthdayCard = () => {
         <div className="fancy-banner">
           <div className="ribbon-left">🎀</div>
           <h2>
-            Happy Birthday Khushi ji <span className="heart">❤️</span>
+            Happy Birthday Khushi ji <span className="heart"></span>
           </h2>
           <div className="ribbon-right">🎀</div>
         </div>
