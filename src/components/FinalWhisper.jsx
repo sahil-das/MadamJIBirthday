@@ -27,7 +27,7 @@ const FinalWhisper = () => {
           I loved you not because I could have you...<br />
           but because loving you made me feel alive in silence.
         </p>
-        <div className="signature">– Avinash</div>
+        <div className="signature">– Sahil</div>
         <button className="replay-button" onClick={() => window.location.href = '/'}>
           ↻ Replay Message
         </button>
