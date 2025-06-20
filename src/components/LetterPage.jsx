@@ -83,7 +83,7 @@ export default function LetterPage() {
         {showNext && (
           <div className="next-button-container">
             <button className="next-button show" onClick={goToNextPage}>
-              🎁 Open Surprise
+              🎁 Some Memories
             </button>
           </div>
         )}

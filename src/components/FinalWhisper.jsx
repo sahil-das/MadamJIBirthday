@@ -19,15 +19,17 @@ const FinalWhisper = () => {
 
   return (
     <div className="container">
-      <h1>This Is Not Just Goodbye... 💫</h1>
+      <h1> Just a Quiet Thank You... 🌸</h1>
+
       <div className="message-box">
         <p>
-          Somewhere between memories and dreams,<br />
-          you became the most beautiful chapter I never wrote.<br /><br />
-          I loved you not because I could have you...<br />
-          but because loving you made me feel alive in silence.
+          Once again... <strong>Happy Birthday, Madam ji. 🎉🌸</strong><br /><br />
+          Thank you for turning these few digital pages into something meaningful.<br />
+          Every word was chosen with care, every image placed with thought...<br /><br />
+          You may never know how much this meant — and that’s okay.<br />
+          Some feelings are best left as gentle whispers in time.<br /><br />
+          <em>— With all respect and quiet admiration,<br />Sahil</em>
         </p>
-        <div className="signature">– Sahil</div>
         <button className="replay-button" onClick={() => window.location.href = '/'}>
           ↻ Replay Message
         </button>
