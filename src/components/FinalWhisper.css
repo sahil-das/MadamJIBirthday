@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at top, #1c1b33, #0f0f1c 80%);
+  color: #f9f5ff;
+  font-family: 'Playfair Display', serif;
+  overflow: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@1,600&display=swap');
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  animation: fadeIn 2s ease-in;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 1;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  color: #ffdef5;
+  text-shadow: 0 0 20px #ff66c4, 0 0 40px #ff66c4;
+  margin-bottom: 20px;
+}
+
+.message-box {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  width: 100%;
+  max-width: 750px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px #ff99cc, 0 0 40px #ff66c4;
+  max-width: 750px;
+  margin: 0 20px;
+  z-index: 2;
+}
+
+p {
+  font-size: 1.3em;
+  line-height: 1.8;
+  text-shadow: 0 0 5px #000;
+}
+
+.signature {
+  margin-top: 30px;
+  font-size: 1.5em;
+  font-family: 'Great Vibes', cursive;
+  color: #ffd1e0;
+  text-shadow: 0 0 10px #ff80bf;
+}
+
+.replay-button {
+  margin-top: 30px;
+  background: transparent;
+  color: #ffd1e0;
+  font-size: 1em;
+  border: 2px solid #ffd1e0;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.replay-button:hover {
+  background: #ffd1e040;
+  box-shadow: 0 0 12px #ffd1e0;
+}
+
+.rain-drop {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  width: 2px;
+  height: 18px;
+  background: linear-gradient(to bottom, #fff, #b3c6ff 60%, #80aaff 100%);
+  border-radius: 1px 1px 6px 6px;
+  opacity: 0.25;
+  z-index: 0;
+  pointer-events: none;
+  animation: rainDown 1.2s linear forwards;
+}
+
+@keyframes rainDown {
+  0% {
+    transform: translateY(-10vh) scaleY(0.7);
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(110vh) scaleY(1.2);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+    text-shadow: 0 0 10px #ff66c4;
+    margin: 0 10px 20px;
+  }
+
+  .message-box {
+    padding: 20px;
+    margin: 0 10px;
+    max-width: 90%;
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+
+  .signature {
+    font-size: 1.3em;
+    margin-top: 20px;
+  }
+
+  .replay-button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  .container {
+    padding: 10px 15px;
+  }
+}
