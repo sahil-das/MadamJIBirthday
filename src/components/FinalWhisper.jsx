@@ -31,7 +31,7 @@ const FinalWhisper = () => {
           <em>— With all respect and quiet admiration,<br />Sahil</em>
         </p>
         <button className="replay-button" onClick={() => window.location.href = '/'}>
-          ↻ Replay Message
+          ↻ Home
         </button>
       </div>
       <audio autoPlay loop>
