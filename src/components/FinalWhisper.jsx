@@ -23,7 +23,7 @@ const FinalWhisper = () => {
 
       <div className="message-box">
         <p>
-          Once again... <strong>Happy Birthday, Madam ji. 🎉🌸</strong><br /><br />
+          Once again... <strong>Happy Birthday, Khushi ji. 🎉🌸</strong><br /><br />
           Thank you for turning these few digital pages into something meaningful.<br />
           Every word was chosen with care, every image placed with thought...<br /><br />
           You may never know how much this meant — and that’s okay.<br />
