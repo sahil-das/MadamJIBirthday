@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import "../styles/DiaryPage.css";
 
-
 const images = [
-  { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/1.png' : '/images/1.png', quote: 'Your smile was the beginning of my silence.' },
-  { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/2.png' : '/images/2.png', quote: 'Even in a crowd, I only saw you.' },
-  { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/3.png' : '/images/3.png', quote: 'Every glance of you felt like forever.' },
-  { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/4.png' : '/images/4.png', quote: 'You are the poem I never finished writing.' },
-  { src: process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/images/5.png' : '/images/5.png', quote: 'Some memories don’t fade… they bloom in silence.' }
+  { src: 'https://picsum.photos/seed/1/300/400', quote: 'Your smile was the beginning of my silence.' },
+  { src: 'https://picsum.photos/seed/2/310/420', quote: 'Even in a crowd, I only saw you.' },
+  { src: 'https://picsum.photos/seed/3/320/430', quote: 'Every glance of you felt like forever.' },
+  { src: 'https://picsum.photos/seed/4/330/440', quote: 'You are the poem I never finished writing.' },
+  { src: 'https://picsum.photos/seed/5/340/460', quote: 'Still… you are everything I remember beautifully.' }
 ];
 
 export default function SurpriseSlideshow() {
@@ -71,7 +70,12 @@ export default function SurpriseSlideshow() {
                   <div className="loading-bar-inner"></div>
                 </div>
               ) : (
-                <div className="photo-container" style={{ backgroundImage: `url(${item.src})` }}></div>
+                <div className="photo-container" style={{ backgroundImage: `url(${item.src})` }}>
+                  <div className="photo-overlay-text">
+                    Madam ji, Sorry
+                    <br /> <br /> for your privacy, I used random images from the internet.
+                  </div>
+                </div>
               )}
               <div className="quote">{item.quote}</div>
             </div>

@@ -74,6 +74,25 @@ h1 {
   margin-bottom: 15px;
 }
 
+.photo-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  max-width: 90%;
+  word-break: break-word;
+}
+
 .quote {
   text-align: center;
   font-size: 1.2em;
