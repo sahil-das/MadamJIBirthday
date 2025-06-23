@@ -1,5 +1,6 @@
 // src/components/AdminLogin.jsx
 import React, { useState } from 'react';
+import "../styles/AdminLogin.css";
 import { useNavigate } from 'react-router-dom';
 
 export default function AdminLogin({ setToken }) {
@@ -32,40 +33,28 @@ export default function AdminLogin({ setToken }) {
   };
 
   return (
-    <div style={{ maxWidth: 350, margin: '4em auto', background: '#fff', borderRadius: 12, boxShadow: '0 2px 16px #0002', padding: 24 }}>
+    <div className="login-container">
+      <div className="login-logo" title="Admin Login">🔒</div>
       <h2>Admin Login</h2>
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: 12 }}>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            style={{ width: '100%', padding: 8, borderRadius: 6, border: '1px solid #ccc' }}
-            required
-          />
-        </div>
-        <div style={{ marginBottom: 12, position: 'relative' }}>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={e => setUsername(e.target.value)}
+          required
+        />
+        <div style={{ position: 'relative' }}>
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Password"
             value={password}
             onChange={e => setPassword(e.target.value)}
-            style={{ width: '100%', padding: 8, borderRadius: 6, border: '1px solid #ccc', paddingRight: 36 }}
             required
           />
           <span
+            className="show-password"
             onClick={() => setShowPassword(v => !v)}
-            style={{
-              position: 'absolute',
-              right: 10,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              cursor: 'pointer',
-              fontSize: 18,
-              color: showPassword ? '#ff69b4' : '#888',
-              userSelect: 'none'
-            }}
             title={showPassword ? 'Hide password' : 'Show password'}
             tabIndex={0}
             onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setShowPassword(v => !v); }}
@@ -74,10 +63,8 @@ export default function AdminLogin({ setToken }) {
             {showPassword ? '🙈' : '👁️'}
           </span>
         </div>
-        {error && <div style={{ color: 'red', marginBottom: 10 }}>{error}</div>}
-        <button type="submit" style={{ width: '100%', padding: 10, borderRadius: 6, background: '#ff69b4', color: '#fff', border: 'none', fontWeight: 'bold' }}>
-          Login
-        </button>
+        {error && <div className="error">{error}</div>}
+        <button type="submit">Login</button>
       </form>
     </div>
   );
