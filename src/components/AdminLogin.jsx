@@ -20,7 +20,6 @@ export default function AdminLogin({ setToken }) {
         body: JSON.stringify({ username, password })
       });
       const data = await res.json();
-      console.log('Login response:', data);
       if (res.ok && data.token) {
         setToken(data.token);
         navigate('/admin/dashboard');
