@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "../styles/BirthdayCard.css";
 
 const FALLING_EMOJIS = [ "🌸", "💐", "💗", "🌷",, "🌹"];
@@ -56,7 +57,8 @@ const BirthdayCard = () => {
       mainContainerRef.current.classList.add('fade-out');
     }
     setTimeout(() => {
-      window.location.href = '/letter'; // Use React Router for SPA navigation
+      navigate('/letter'); // no reload
+     // window.location.href = '/letter'; // Use React Router for SPA navigation
     }, 1000);
   };
 
