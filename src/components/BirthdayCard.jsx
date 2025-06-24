@@ -57,8 +57,8 @@ const BirthdayCard = () => {
       mainContainerRef.current.classList.add('fade-out');
     }
     setTimeout(() => {
-      navigate('/letter'); // no reload
-     // window.location.href = '/letter'; // Use React Router for SPA navigation
+     // navigate('/letter'); // no reload
+      window.location.href = '/letter'; // Use React Router for SPA navigation
     }, 1000);
   };
 
