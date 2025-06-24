@@ -8,6 +8,7 @@ const BirthdayCard = () => {
   const mainContainerRef = useRef(null);
   const [falling, setFalling] = React.useState([]);
   const [confetti, setConfetti] = React.useState([]);
+  const navigate = useNavigate();
 
   // Generate falling elements
   useEffect(() => {
@@ -57,8 +58,7 @@ const BirthdayCard = () => {
       mainContainerRef.current.classList.add('fade-out');
     }
     setTimeout(() => {
-     // navigate('/letter'); // no reload
-      window.location.href = '/letter'; // Use React Router for SPA navigation
+      navigate('/letter'); // SPA navigation
     }, 1000);
   };
 

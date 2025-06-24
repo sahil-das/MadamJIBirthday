@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Added for SPA navigation
 import "../styles/DiaryPage.css";
 
 const images = [
@@ -13,6 +14,7 @@ export default function SurpriseSlideshow() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const containerRef = useRef(null);
+  const navigate = useNavigate(); // Added for SPA navigation
 
   // Floating symbols
   useEffect(() => {
@@ -42,7 +44,7 @@ export default function SurpriseSlideshow() {
     if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      window.location.href = 'final-whisper'; // Redirect to final whisper page
+      navigate('/final-whisper'); // SPA navigation
     }
   };
 
@@ -50,7 +52,7 @@ export default function SurpriseSlideshow() {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     } else {
-      window.location.href = 'letter';
+      navigate('/letter'); // SPA navigation
     }
   };
 

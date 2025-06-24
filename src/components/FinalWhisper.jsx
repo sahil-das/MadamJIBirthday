@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/FinalWhisper.css';
 
 const FinalWhisper = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const createRainDrop = () => {
       const drop = document.createElement('div');
@@ -30,7 +32,7 @@ const FinalWhisper = () => {
           Some feelings are best left as gentle whispers in time.<br /><br />
           <em>— With all respect and quiet admiration,<br />Sahil</em>
         </p>
-        <button className="replay-button" onClick={() => window.location.href = '/'}>
+        <button className="replay-button" onClick={() => navigate('/')}>
           ↻ Home
         </button>
       </div>
