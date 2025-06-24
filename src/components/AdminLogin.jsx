@@ -8,11 +8,13 @@ export default function AdminLogin({ setToken }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setLoading(true);
     try {
       const res = await fetch('https://visitor-traker.onrender.com/api/admin/login', {
         method: 'POST',
@@ -29,6 +31,7 @@ export default function AdminLogin({ setToken }) {
     } catch (err) {
       setError('Network error');
     }
+    setLoading(false);
   };
 
   return (
@@ -63,8 +66,13 @@ export default function AdminLogin({ setToken }) {
           </span>
         </div>
         {error && <div className="error">{error}</div>}
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}>
+          {loading ? <span className="loading-spinner" style={{display:'inline-block',verticalAlign:'middle',width:'1.2em',height:'1.2em',border:'2.5px solid #ff69b4',borderTop:'2.5px solid #fff',borderRadius:'50%',animation:'spin 0.7s linear infinite'}}></span> : 'Login'}
+        </button>
       </form>
+      <style>{`
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      `}</style>
     </div>
   );
 }
