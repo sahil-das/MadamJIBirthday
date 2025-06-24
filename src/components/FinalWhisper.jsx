@@ -21,7 +21,7 @@ const FinalWhisper = () => {
 
   return (
     <div className="container">
-      <h1> Just a Quiet Thank You... 🌸</h1>
+      <h1> Just a Quiet Thank You...  🌸</h1>
 
       <div className="message-box">
         <p>
