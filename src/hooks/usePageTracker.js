@@ -3,21 +3,16 @@ import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // Generate or reuse a sessionId for the session
-function getSessionId() {
-  let sessionId = sessionStorage.getItem('sessionId');
-  if (!sessionId) {
-    sessionId = Math.random().toString(36).substr(2, 16) + Date.now();
-    sessionStorage.setItem('sessionId', sessionId);
-  }
-  return sessionId;
+let sessionId = sessionStorage.getItem('sessionId');
+if (!sessionId) {
+  sessionId = Math.random().toString(36).substr(2, 16) + Date.now();
+  sessionStorage.setItem('sessionId', sessionId);
 }
-
 
 const usePageTracker = () => {
   const location = useLocation();
   const startTimeRef = useRef(Date.now());
   const prevPathRef = useRef(location.pathname);
-  const sessionId = getSessionId();
 
   useEffect(() => {
     // Don't track admin pages
@@ -44,7 +39,7 @@ const usePageTracker = () => {
 
     window.addEventListener('beforeunload', handleUnload);
     return () => window.removeEventListener('beforeunload', handleUnload);
-  }, [location,sessionId]);
+  }, [location, sessionId]);
 };
 
 export default usePageTracker;
