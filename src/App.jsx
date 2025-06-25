@@ -22,7 +22,7 @@ export default function App() {
     </Router>
   );
 }
-//testing
+
 function AppRoutes({ token, setToken }) {
   usePageTracker();
   return (
