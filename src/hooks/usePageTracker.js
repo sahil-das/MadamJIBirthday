@@ -19,7 +19,7 @@ const usePageTracker = () => {
     if (location.pathname.startsWith('/admin')) return;
     
     const logActivity = (path, timeSpent) => {
-      console.log('Sending activity:', { page: path, timeSpent, sessionId });
+
       navigator.sendBeacon('https://visitor-traker.onrender.com/api/activity/log', JSON.stringify({ page: path, timeSpent, sessionId }));
     };
 
@@ -36,7 +36,6 @@ const usePageTracker = () => {
       if (location.pathname.startsWith('/admin')) return;
       const now = Date.now();
       const timeSpent = Math.round((now - startTimeRef.current) / 1000);
-      console.log('Sending activity (unload):', { page: prevPathRef.current, timeSpent, sessionId });
       navigator.sendBeacon('https://visitor-traker.onrender.com/api/activity/log', JSON.stringify({ page: prevPathRef.current, timeSpent, sessionId }));
     };
 

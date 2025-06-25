@@ -3,7 +3,7 @@ import "../styles/AdminDashboard.css";
 import React, { useEffect, useState } from 'react';
 
 const api_dashboard_url = 'https://visitor-traker.onrender.com/api/admin/activity';
-// api_dashboard_url = 'http://localhost:5000/api/admin/activity'; // Change to your actual API URL
+
 const AdminDashboard = ({ token }) => {
   const [logs, setLogs] = useState([]);
 
