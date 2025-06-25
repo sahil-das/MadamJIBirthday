@@ -2,13 +2,15 @@
 import "../styles/AdminDashboard.css";
 import React, { useEffect, useState } from 'react';
 
+const api_dashboard_url = 'https://visitor-traker.onrender.com/api/admin/activity';
+// api_dashboard_url = 'http://localhost:5000/api/admin/activity'; // Change to your actual API URL
 const AdminDashboard = ({ token }) => {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const res = await fetch('https://visitor-traker.onrender.com/api/admin/activity', {
+        const res = await fetch(api_dashboard_url, {
           headers: { Authorization: token }
         });
         if (!res.ok) throw new Error('Failed to fetch');
@@ -35,6 +37,7 @@ const AdminDashboard = ({ token }) => {
             <table>
               <thead>
                 <tr>
+                  <th>Session ID</th>
                   <th>Page</th>
                   <th>Time (s)</th>
                   <th>Browser</th>
@@ -51,6 +54,7 @@ const AdminDashboard = ({ token }) => {
               <tbody>
                 {logs.map((log, i) => (
                   <tr key={i}>
+                    <td style={{fontFamily: 'monospace', fontSize: '0.9em'}}>{log.sessionId}</td>
                     <td>{log.page}</td>
                     <td>{log.timeSpent}</td>
                     <td>{log.browser}</td>
