@@ -73,10 +73,7 @@ export default function SurpriseSlideshow() {
                 </div>
               ) : (
                 <div className="photo-container" style={{ backgroundImage: `url(${item.src})` }}>
-                  <div className="photo-overlay-text">
-                    Madam ji, Sorry
-                    <br /> <br /> for your privacy, I used random images from the internet.
-                  </div>
+
                 </div>
               )}
               <div className="quote">{item.quote}</div>
